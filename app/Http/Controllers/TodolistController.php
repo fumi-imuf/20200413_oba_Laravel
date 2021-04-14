@@ -63,11 +63,11 @@ class TodolistController extends Controller
         $item->save();
         if ($item) {
             return response()->json([
-                'message' => $item
-        ], 200);
+                'message' => $item,
+        ], 200);  
         } else {
             return response()->json([
-                'message' => 'Not found'
+                'message' => 'Not found',
             ], 404);
         }
     }
@@ -83,11 +83,11 @@ class TodolistController extends Controller
         $item = Todolist::where('id', $todolist->id)->delete();
         if ($item) {
             return response()->json([
-                'message' => $item
+                'message' => $item,
             ], 200);
         } else {
             return response()->json([
-                'message' => $item
+                'message' => $item,
             ], 404);
         }
     }
